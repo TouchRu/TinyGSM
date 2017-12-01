@@ -692,6 +692,10 @@ public:
     return waitResponse(60000L) == 1;
   }
 
+  bool deleteSMS(uint8_t index) {
+	  sendAT(GF("+CMGD="), index);
+	  return waitResponse() == 1;
+  }
 
   /*
    * Location functions
